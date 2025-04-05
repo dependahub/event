@@ -28,5 +28,10 @@
     "event",
     "vue",
     "react"
-  ]
+  ],
+  "xo": {
+    "ignore": [
+      "@types/*"
+    ]
+  }
 }
