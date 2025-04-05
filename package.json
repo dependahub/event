@@ -1,6 +1,6 @@
 {
   "name": "@dependahub/event",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "軽量なイベントシステム",
   "license": "MIT",
   "author": "DependaHub <mail@dependahub.com>",
