@@ -1,0 +1,32 @@
+{
+  "name": "@dependahub/event",
+  "version": "1.0.0",
+  "description": "軽量なイベントシステム",
+  "license": "MIT",
+  "author": "DependaHub <mail@dependahub.com>",
+  "types": "@types/index.d.ts",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "xo && ava",
+    "build": "rm -rf @types && tsc"
+  },
+  "devDependencies": {
+    "ava": "^6.2.0",
+    "typescript": "^5.8.3",
+    "xo": "^0.60.0"
+  },
+  "homepage": "https://github.com/dependahub/event#readme",
+  "bugs": {
+    "url": "https://github.com/dependahub/event/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dependahub/event.git"
+  },
+  "keywords": [
+    "event",
+    "vue",
+    "react"
+  ]
+}
