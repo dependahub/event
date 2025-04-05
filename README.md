@@ -21,9 +21,9 @@ const subscriptionB = event.subscribe('eventName', async payload => {
 subscriptionA.unsubscribe();
 
 // イベントの発火
-event.push('eventName', payload); // subscriptionB のみ発火
+await event.push('eventName', payload); // subscriptionB のみ発火
 
 // イベントの削除
 event.remove('eventName');
-event.push('eventName', payload); // 何も発火しません
+await event.push('eventName', payload); // 何も発火しません
 ```
