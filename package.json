@@ -32,6 +32,9 @@
   "xo": {
     "ignore": [
       "@types/*"
-    ]
+    ],
+    "rules": {
+      "capitalized-comments": "off"
+    }
   }
 }
