@@ -12,6 +12,11 @@ export class Subscription {
      * @returns {void}
      */
     unsubscribe(): void;
+    /**
+     * 購読が解除されている場合は true を返します。
+     * @returns {boolean}
+     */
+    isUnsubscribed(): boolean;
     #private;
 }
 //# sourceMappingURL=subscription.d.ts.map

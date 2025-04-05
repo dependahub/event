@@ -7,6 +7,7 @@ export default event;
 declare class Event {
     /**
      * イベントの送信
+     * - unsubscribe()されたサブスクリプションはpush()時に全て削除されます。
      * @param {string} eventName
      * @param {any} payload
      * @returns {Promise<void>}

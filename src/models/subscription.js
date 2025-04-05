@@ -27,4 +27,12 @@ export class Subscription {
 	unsubscribe() {
 		this.#callback = null;
 	}
+
+	/**
+	 * 購読が解除されている場合は true を返します。
+	 * @returns {boolean}
+	 */
+	isUnsubscribed() {
+		return this.#callback === null;
+	}
 }

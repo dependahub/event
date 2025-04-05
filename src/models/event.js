@@ -1,10 +1,14 @@
 import {Subscription} from './subscription.js';
 
 class Event {
+	/**
+	 * @type {Map<string, Subscription[]>}
+	 */
 	#eventNameMapToSubscription = new Map();
 
 	/**
 	 * イベントの送信
+	 * - unsubscribe()されたサブスクリプションはpush()時に全て削除されます。
 	 * @param {string} eventName
 	 * @param {any} payload
 	 * @returns {Promise<void>}
@@ -12,6 +16,16 @@ class Event {
 	async push(eventName, payload) {
 		if (!this.#eventNameMapToSubscription.has(eventName)) {
 			return;
+		}
+
+		// unsubscribe()されたものは削除
+		for (const subscription of this.#eventNameMapToSubscription.get(eventName)) {
+			if (!subscription.isUnsubscribed()) {
+				continue;
+			}
+
+			const index = this.#eventNameMapToSubscription.get(eventName).indexOf(subscription);
+			this.#eventNameMapToSubscription.get(eventName).splice(index, 1);
 		}
 
 		await Promise.all(
